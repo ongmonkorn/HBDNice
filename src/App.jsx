@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Gift, Heart, Sparkles, Cake, Stars } from 'lucide-react';
+import niceImage from './assets/nice_placeholder.jpg';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -136,6 +137,29 @@ export default function App() {
                   </motion.h1>
                 </div>
 
+                {/* Image */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.9, type: "spring", bounce: 0.4 }}
+                  className="relative group w-32 h-32 sm:w-40 sm:h-40 mt-6"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-300 to-rose-400 rounded-full blur-md opacity-40 group-hover:opacity-70 transition-opacity"></div>
+                  <img 
+                    src={niceImage} 
+                    alt="Birthday Girl" 
+                    className="relative w-full h-full object-cover rounded-full border-4 border-white/80 shadow-lg group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Floating heart */}
+                  <motion.div 
+                    animate={{ y: [0, -8, 0] }} 
+                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 }}
+                    className="absolute -top-1 -right-1 bg-white rounded-full p-1.5 shadow-md"
+                  >
+                    <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
+                  </motion.div>
+                </motion.div>
+
                 {/* Message */}
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -149,10 +173,10 @@ export default function App() {
                     โตขึ้นอีกปีแล้วแต่ก็ยังน่ารักเหมือนเดิมเลยนะ <br/>
 
                     ขอให้ปีนี้มีแต่เรื่องดีๆเข้ามาในชีวิต ยิ้มเยอะๆนะ<br/>
-                    ถ้าเหงาเมื่อไหร่ก็หันมาหาเราได้ตลอดเลย<br/>
+                    ถ้าเหงาเมื่อไหร่ก็หันมาหาพี่ได้ตลอดเลย<br/>
 
                     ดูแลตัวเองดีๆด้วยนะ<br/>
-                    ส่วนที่เหลือ…เดี๋ยวเราดูแลเอง 😝💞<br/>
+                    ส่วนที่เหลือ…เดี๋ยวพี่ดูแลเอง 😝💞<br/>
                   </p>
                 </motion.div>
 
