@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Prompt', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Prompt', 'Playfair Display', ui-serif, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply bg-pink-50 text-pink-900 antialiased overflow-x-hidden;
+  }
+}
